@@ -16,21 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: (origin, callback) => {
-      if (
-        process.env.NODE_ENV === "production" &&
-        origin === "http://3.142.77.97:3000"
-      ) {
-        callback(null, true);
-      } else if (
-        process.env.NODE_ENV !== "production" &&
-        origin === process.env.FRONTEND_URL
-      ) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
+    origin: "https://my-doe-frontend.onrender.com",
     credentials: true,
   })
 );
