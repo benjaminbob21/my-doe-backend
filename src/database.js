@@ -3,9 +3,19 @@ import { Sequelize } from 'sequelize';
 export const sequelize = new Sequelize("doe-project", "postgres", " ", {
   host: "localhost",
   dialect: "postgres",
-  port: process.env.PORT
+  port: process.env.DB_PORT
 });
 
+// export const sequelize = new Sequelize(
+//   process.env.DB_NAME,
+//   process.env.DB_USER,
+//   process.env.DB_PASSWORD,
+//   {
+//     host: process.env.DB_HOST,
+//     dialect: "postgres",
+//     port: process.env.DB_PORT,
+//   }
+// );
 
 sequelize
   .authenticate()
